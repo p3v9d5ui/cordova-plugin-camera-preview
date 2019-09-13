@@ -17,6 +17,7 @@ import android.util.TypedValue;
 import android.view.ViewGroup;
 import android.view.ViewParent;
 import android.widget.FrameLayout;
+import android.graphics.Color;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
@@ -816,6 +817,7 @@ private boolean getSupportedFocusModes(CallbackContext callbackContext) {
       cordova.getActivity().runOnUiThread(new Runnable() {
         @Override
         public void run() {
+          webView.getView().setBackgroundColor(Color.WHITE);
           ((ViewGroup)webView.getView()).bringToFront();
           webViewParent = null;
         }
