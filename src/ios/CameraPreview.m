@@ -84,6 +84,9 @@
 - (void) stopCamera:(CDVInvokedUrlCommand*)command {
     NSLog(@"stopCamera");
     CDVPluginResult *pluginResult;
+
+    self.webView.opaque = YES;
+    self.webView.backgroundColor = [UIColor whiteColor];
     
     if(self.sessionManager != nil) {
         [self.cameraRenderController.view removeFromSuperview];
